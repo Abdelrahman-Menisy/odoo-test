@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<odoo>
-    <template id="assets_backend" inherit_id="web.assets_backend">
-        <xpath expr="." position="inside">
-            <script type="module" src="/sale_order_notification/static/src/components/OrderNotification.js"/>
-            <link rel="stylesheet" href="/sale_order_notification/static/src/css/order_notification.css"/>
-        </xpath>
-    </template>
-</odoo>
