@@ -1,10 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
 
-<templates>
+    <templates>
 
-    <t t-name="OwlTodoList" owl='1'>
-        <div>Owl To DO List</div>
-        <p t-esc="state.value"/>
-    </t>
+        <t t-name="OwlTodoList" owl='1'>
+            <div>Owl To DO List</div>
+            <p t-esc="state.value" />
+        </t>
 
-</templates>
+    </templates>
+    
+
+</odoo>
