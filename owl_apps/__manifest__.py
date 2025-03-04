@@ -18,9 +18,9 @@
     "application": True,
     "assets": {
         "web.assets_backend": [
-            # "owl/static/src/components/*/*.js",
-            # "owl/static/src/components/*/*.xml",
-            # "owl/static/src/components/*/*.scss",
+            "owl/static/src/components/*/*.js",
+            "owl/static/src/components/*/*.xml",
+            "owl/static/src/components/*/*.scss",
         ],
         "point_of_sale.assets": [
             # "owl/static/src/pos/**/*.js",

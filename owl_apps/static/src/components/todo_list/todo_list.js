@@ -1,0 +1,18 @@
+/** @odoo-module */
+
+import { registry } from '@web/core/registry';
+
+const { Component, useState } = owl;
+
+export class OwlTodoList extends Component {
+
+    setup() {
+        this.state = useState({ value:1});
+
+    }
+
+}
+
+OwlTodoList.template = 'OwlTodoList';
+
+registry.category('actions').add('owl.action_todo_list_js',OwlTodoList);

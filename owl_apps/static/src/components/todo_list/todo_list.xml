@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates>
+
+    <t t-name="OwlTodoList" owl='1'>
+        <div>Owl To DO List</div>
+        <p t-esc="state.value"/>
+    </t>
+
+</templates>
