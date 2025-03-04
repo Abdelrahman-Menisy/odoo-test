@@ -2,7 +2,20 @@
 <templates xml:space="preserve">
 
     <t t-name="owl.TodoList" owl="1">
-      <div>Owl to do list</div>
-      <p t-esc='state.value'/>
+      <div class='todo-list-container'>
+        <div class="row">
+          <div class="col-lg-6">
+            <button class="btn btn-primary">New</button>
+          </div>
+          <div class="col-lg-6">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search for..." />
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
     </t>
 </templates>
