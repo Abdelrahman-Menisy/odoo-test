@@ -1,11 +1,11 @@
 /* @odoo-module **/
 
 import { registry } from "@web/core/registry";
-import { listView } from "@web/views/list/list_view";
-import { listController } from "@web/views/list/list_controller";
+import { ListView } from "@web/views/list/list_view"; // Import ListView (uppercase 'L')
+import { ListController } from "@web/views/list/list_controller"; // Import ListController (uppercase 'L')
 import { useService } from "@web/core/utils/hooks";
 
-class ResPartnerListController extends listView {
+class ResPartnerListController extends ListController {
     setup() {
         super.setup();
         console.log("ResPartnerListView setup");
@@ -15,7 +15,7 @@ class ResPartnerListController extends listView {
     openSaleOrders() {
         this.action.doAction({
             type: "ir.actions.act_window",
-            name: "customer sale orders",
+            name: "Customer Sale Orders",
             res_model: "sale.order",
             views: [[false, "list"], [false, "form"]],
         });
@@ -23,8 +23,8 @@ class ResPartnerListController extends listView {
 }
 
 export const ResPartnerListView = {
-    ...listView,
-    controller: ResPartnerListController,
+    ...ListView, // Use ListView, not listView
+    Controller: ResPartnerListController, // 'Controller' should be capitalized
     buttonTemplate: "owl.respartnerinherit.Buttons",
 }
 
