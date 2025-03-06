@@ -1,31 +1,36 @@
-/* @odoo-module **/
+/* @odoo-module */
 
 import { registry } from "@web/core/registry";
-import { ListView } from "@web/views/list/list_view"; // Import ListView (uppercase 'L')
-import { ListController } from "@web/views/list/list_controller"; // Import ListController (uppercase 'L')
+import { ListView } from "@web/views/list/list_view";
 import { useService } from "@web/core/utils/hooks";
 
-class ResPartnerListController extends ListController {
+class ResPartnerListController extends ListView.Controller {
     setup() {
         super.setup();
         console.log("ResPartnerListView setup");
-        this.action = useService("action");
+
+        // Correctly initialize the action service
+        this.actionService = useService("action");
     }
 
     openSaleOrders() {
-        this.action.doAction({
-            type: "ir.actions.act_window",
-            name: "Customer Sale Orders",
-            res_model: "sale.order",
-            views: [[false, "list"], [false, "form"]],
-        });
+        if (this.actionService) {
+            this.actionService.doAction({
+                type: "ir.actions.act_window",
+                name: "Customer Sale Orders",
+                res_model: "sale.order",
+                views: [[false, "list"], [false, "form"]],
+            });
+        } else {
+            console.error("Action service is not available.");
+        }
     }
 }
 
 export const ResPartnerListView = {
-    ...ListView, // Use ListView, not listView
-    Controller: ResPartnerListController, // 'Controller' should be capitalized
+    ...ListView,
+    Controller: ResPartnerListController, // Corrected capitalization
     buttonTemplate: "owl.respartnerinherit.Buttons",
-}
+};
 
 registry.category("views").add("res_partner_list_view", ResPartnerListView);
