@@ -1,16 +1,14 @@
 /* @odoo-module */
 
 import { registry } from "@web/core/registry";
-import { ListView } from "@web/views/list/list_view";
+import { ListView } from "@web/views/list/list_view"; // Keep only one correct import
 import { useService } from "@web/core/utils/hooks";
-import { ListView } from "@web/views/list/list_view/list_view"; // Correct import path
 
 class ResPartnerListController extends ListView.Controller {
     setup() {
         super.setup();
         console.log("ResPartnerListView setup");
 
-        // Correctly initialize the action service
         this.actionService = useService("action");
     }
 
