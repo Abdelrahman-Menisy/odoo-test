@@ -3,6 +3,7 @@
 import { registry } from "@web/core/registry";
 import { ListView } from "@web/views/list/list_view";
 import { useService } from "@web/core/utils/hooks";
+import { ListView } from "@web/views/list/list_view/list_view"; // Correct import path
 
 class ResPartnerListController extends ListView.Controller {
     setup() {
